@@ -1,1 +1,2 @@
-["redis-brain.coffee", "tweet.coffee", "points.coffee"]
+["redis-brain.coffee", "tweet.coffee", "karama.coffee",
+"points.coffee"]
