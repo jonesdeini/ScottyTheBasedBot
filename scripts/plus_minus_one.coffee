@@ -30,7 +30,7 @@ module.exports = (robot) ->
       robot.brain.data.achievements[receiver] ||= []
       event = {reason: reason, given_by: thanking, points: points}
       robot.brain.data.achievements[receiver].push event
-      msg.send "#{event.given_by} gives #{points} to #{receiver} for #{event.reason}"
+      msg.send "#{event.given_by} gives #{event.points} to #{receiver} for #{event.reason}"
 
   # robot.respond /who thanks me??/i, (msg) ->
   #   user = msg.message.user.name
@@ -43,7 +43,7 @@ module.exports = (robot) ->
     ranking = []
 
     for person, achievements of robot.brain.data.achievements
-      ranking.push {name: person, points: achievements[points].reduce (x,y) -> x + y}
+      ranking.push {name: person, points: achievements.points.reduce (x,y) -> x + y}
 
     sortedRanking = ranking.sort (a, b) ->
       b.points - a.points
