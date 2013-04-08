@@ -32,18 +32,11 @@ module.exports = (robot) ->
       robot.brain.data.achievements[receiver].push event
       msg.send "#{event.given_by} gives #{event.points} to #{receiver} for #{event.reason}"
 
-  # robot.respond /who thanks me??/i, (msg) ->
-  #   user = msg.message.user.name
-  #   response = "#{user}, #{robot.brain.data.achievements[user].length} time(s) someone thanked you:\n"
-  #   for achievement in robot.brain.data.achievements[user]
-  #     response += "#{achievement.given_by} for #{achievement.reason}\n"
-  #   msg.send response
-
   robot.respond /(|show )ranking/i, (msg) ->
     ranking = []
 
     for person, achievements of robot.brain.data.achievements
-      ranking.push {name: person, points: achievements.points.reduce (x,y) -> x + y}
+      ranking.push {name: person, points: achievements.reduce (x,y) -> x.points + y.points}
 
     sortedRanking = ranking.sort (a, b) ->
       b.points - a.points
