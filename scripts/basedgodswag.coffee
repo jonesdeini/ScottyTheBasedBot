@@ -54,5 +54,9 @@ swag = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /swag|based|basedgod|omg basedgod/i, (msg) ->
+  robot.hear /swag/i, (msg) ->
     msg.send msg.random swag
+
+module.exports = (robot) ->
+  robot.hear /how much are (lil b's|basedgod's) Vans worth?/i, (msg) ->
+    msg.send "45K Bruh"
