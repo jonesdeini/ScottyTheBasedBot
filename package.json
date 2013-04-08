@@ -20,7 +20,9 @@
     "hubot-scripts": "2.4.2",
     "optparse":      "1.0.3",
     "cheerio": "0.10.7",
-    "request": "2.14.0"
+    "request": "2.14.0",
+    "underscore": ">= 1.0.0",
+    "clark": "0.0.6"
   },
 
   "engines": {
