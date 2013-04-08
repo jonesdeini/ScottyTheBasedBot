@@ -1,1 +1,1 @@
-web: bin/hubot -a irc -n ScottyTheBasedBot
+web: bin/hubot -a irc -n BasedBotBob
