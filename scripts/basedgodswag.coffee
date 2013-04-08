@@ -23,10 +23,7 @@ swag = [
   "Do we have any proof what we are?",
   "I remember when I was younger, I didn’t know how to walk. I was so young, I was wondering how I was walking. Am I walking weird? Something’s in my butt? You know what I mean?",
   "So hard on myself. And I say through time and love it’s just easing up on yourself, easing up on life.",
-  "Just take two seconds instead of generalizing, because, I promise you, I looked up what black means online, and black means something like coal, you feel me?"
-]
-
-rareSwag = [
+  "Just take two seconds instead of generalizing, because, I promise you, I looked up what black means online, and black means something like coal, you feel me?",
   "http://24.media.tumblr.com/tumblr_mcimjbKw4m1rhi061o1_500.gif",
   "http://24.media.tumblr.com/ff446a293691fbbc9125ae6d79225cf7/tumblr_mksynfPTI41rdxra3o1_400.jpg",
   "http://25.media.tumblr.com/5e28b6b7323aadeadbd7a51469adc31a/tumblr_mkxwkv0fdJ1qb343ro1_500.jpg",
@@ -57,9 +54,5 @@ rareSwag = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /swag/i, (msg) ->
+  robot.hear /swag|based|basedgod|omg basedgod/i, (msg) ->
     msg.send msg.random swag
-
-module.exports = (robot) ->
-  robot.hear /rarebasedswag/i, (msg) ->
-    msg.send msg.random rareSwag
