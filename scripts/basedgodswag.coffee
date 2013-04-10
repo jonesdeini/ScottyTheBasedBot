@@ -50,7 +50,18 @@ swag = [
   "http://25.media.tumblr.com/tumblr_m9pfxiRYt21qe4ufso1_500.jpg",
   "http://25.media.tumblr.com/tumblr_m9e7r5erIQ1qhygaqo2_500.png",
   "http://25.media.tumblr.com/tumblr_m99zkmatfk1qihimzo1_500.gif",
-  "http://24.media.tumblr.com/e2e81a55adb724cbaf5fb4fb47fffc49/tumblr_mj481oj8en1qffxcco1_500.gif"
+  "http://24.media.tumblr.com/e2e81a55adb724cbaf5fb4fb47fffc49/tumblr_mj481oj8en1qffxcco1_500.gif",
+  "http://24.media.tumblr.com/tumblr_m80janoNSu1qcuagso1_400.jpg",
+  "http://25.media.tumblr.com/tumblr_m80372DxYY1qjw5n9o1_500.jpg",
+  "http://youtu.be/5rGchK3tHbk",
+  "http://25.media.tumblr.com/tumblr_m81pf69Nlb1qg3uqyo1_500.jpg",
+  "http://25.media.tumblr.com/tumblr_m8huas9mRT1qg3uqyo1_500.jpg",
+  "http://25.media.tumblr.com/tumblr_m8bii3L0h21r4mqiyo1_500.jpg",
+  "http://24.media.tumblr.com/tumblr_m81rirGWvU1qgfimdo1_500.jpg",
+  "http://25.media.tumblr.com/tumblr_m81stkPR9v1qg3uqyo1_500.png",
+  "http://25.media.tumblr.com/tumblr_m7okyx2jCe1qjw5n9o1_r1_400.jpg",
+  "http://24.media.tumblr.com/tumblr_m7h23jG2iV1qihimzo1_500.jpg",
+  "http://25.media.tumblr.com/tumblr_m6z624CDAS1r9n721o1_500.jpg"
 ]
 
 module.exports = (robot) ->
