@@ -6,7 +6,7 @@
 #
 # Commands:
 #   <receiver>: (+1|-1) <reason> - give +1|-1 to <receiver> (full name) because he did <reason>
-#   (show ranking|ranking) - show top players
+#   ranking - show top players
 #
 # Author:
 #   jonesdeini
@@ -14,7 +14,7 @@
 module.exports = (robot) ->
   robot.brain.data.achievements ||= {}
 
-  robot.hear /(.*): *(\+1|-1) (.*)$/i, (msg) ->
+  robot.hear /(\S+):? *(\+1|-1) (.*)$/i, (msg) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
     points   = msg.match[2]
@@ -29,7 +29,7 @@ module.exports = (robot) ->
     robot.brain.data.achievements[receiver] = receiverData
     msg.send "#{thanker} gave #{points} to #{receiver} for #{reason}. Now has #{receiverData['total']} points."
 
-  robot.respond /(|show )ranking/i, (msg) ->
+  robot.respond /ranking/i, (msg) ->
     achievements = robot.brain.data.achievements
     names = (k for k of achievements)
 
