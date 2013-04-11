@@ -15,37 +15,32 @@ module.exports = (robot) ->
   robot.brain.data.achievements ||= {}
 
   robot.hear /(.*): *(\+1|-1) (.*)$/i, (msg) ->
+    thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
-    thanking = msg.message.user.name
     points   = msg.match[2]
     reason   = msg.match[3]
 
-    if receiver == thanking
-      msg.send "hey, don't cheat!"
+    points = parseFloat(points)
 
-    unless reason?
-      msg.send "#{thanking}: you must give a reason"
+    receiverData = robot.brain.data.achievements[receiver] ||= {total: 0, latestReason: null, name: receiver}
+    receiverData['total'] += points
+    receiverData['latestReason'] = reason
 
-    if receiver != thanking and reason?
-      robot.brain.data.achievements[receiver] ||= []
-      event = {reason: reason, given_by: thanking, points: points}
-      robot.brain.data.achievements[receiver].push event
-      msg.send "#{event.given_by} gives #{event.points} to #{receiver} for #{event.reason}"
+    robot.brain.data.achievements[receiver] = receiverData
+    msg.send "#{thanker} gave #{points} to #{receiver} for #{reason}. Now has #{receiverData['total']} points."
 
   robot.respond /(|show )ranking/i, (msg) ->
-    ranking = []
+    achievements = robot.brain.data.achievements
+    names = (k for k of achievements)
 
-    for person, achievements of robot.brain.data.achievements
-      ranking.push {name: person, points: achievements.reduce (x,y) -> x.points + y.points}
+    # sort by descending
+    ranking = names.sort (a, b) ->
+      achievements[b]['total'] - achievements[a]['total']
 
-    sortedRanking = ranking.sort (a, b) ->
-      b.points - a.points
+    topFive = ranking.slice(0,5)
 
-    message = "Ranking\n"
-
-    position = 0
-    for user in sortedRanking
-      position += 1
-      message += "#{position}. #{user.name} - #{user.points}\n"
-
-    msg.send message
+    msg.send "# Rankings"
+    for name,i in topFive
+      position = i + 1
+      person = achievements[name]
+      msg.send "  #{position}. #{person['name']} (#{person['total']} pts)"
