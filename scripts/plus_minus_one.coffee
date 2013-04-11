@@ -15,12 +15,15 @@ module.exports = (robot) ->
   robot.brain.data.userpoints ||= {}
 
   robot.hear /(\S+):? *(\+1|-1) (.*)$/i, (msg) ->
-    thanker  = msg.message.user.name
-    receiver = msg.match[1].trim()
+    thanker  = msg.message.user.name.toLowerCase()
+    receiver = msg.match[1].trim().toLowerCase()
     points   = msg.match[2]
     reason   = msg.match[3]
 
     points = parseFloat(points)
+
+    msg.send "#{thanker}: No cheating." if thanker == receiver
+    msg.send "#{thanker}: Must give a reason." unless reason? && reason.length
 
     receiverData = robot.brain.data.userpoints[receiver] ||= {total: 0, latestReason: null, name: receiver}
     receiverData['total'] += points
