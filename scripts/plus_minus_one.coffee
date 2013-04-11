@@ -12,7 +12,7 @@
 #   jonesdeini
 
 module.exports = (robot) ->
-  robot.brain.data.achievements ||= {}
+  robot.brain.data.userpoints ||= {}
 
   robot.hear /(\S+):? *(\+1|-1) (.*)$/i, (msg) ->
     thanker  = msg.message.user.name
@@ -22,25 +22,25 @@ module.exports = (robot) ->
 
     points = parseFloat(points)
 
-    receiverData = robot.brain.data.achievements[receiver] ||= {total: 0, latestReason: null, name: receiver}
+    receiverData = robot.brain.data.userpoints[receiver] ||= {total: 0, latestReason: null, name: receiver}
     receiverData['total'] += points
     receiverData['latestReason'] = reason
 
-    robot.brain.data.achievements[receiver] = receiverData
+    robot.brain.data.userpoints[receiver] = receiverData
     msg.send "#{thanker} gave #{points} to #{receiver} for #{reason}. Now has #{receiverData['total']} points."
 
   robot.respond /ranking/i, (msg) ->
-    achievements = robot.brain.data.achievements
-    names = (k for k of achievements)
+    userpoints = robot.brain.data.userpoints
+    names = (k for k of userpoints)
 
     # sort by descending
     ranking = names.sort (a, b) ->
-      achievements[b]['total'] - achievements[a]['total']
+      userpoints[b]['total'] - userpoints[a]['total']
 
     topFive = ranking.slice(0,5)
 
     msg.send "# Rankings"
     for name,i in topFive
       position = i + 1
-      person = achievements[name]
+      person = userpoints[name]
       msg.send "  #{position}. #{person['name']} (#{person['total']} pts)"
