@@ -7,6 +7,7 @@
 # Commands:
 #   <receiver>: (+1|-1) <reason> - give +1|-1 to <receiver> (full name) because he did <reason>
 #   ranking - show top players
+#   status - world sum
 #
 # Author:
 #   jonesdeini
@@ -31,6 +32,19 @@ module.exports = (robot) ->
 
     robot.brain.data.userpoints[receiver] = receiverData
     msg.send "#{thanker} gave #{points} to #{receiver} for #{reason}. Now has #{receiverData['total']} points."
+
+  robot.respond /status/i, (msg) ->
+    achievements = robot.brain.data.achievements
+    overall = 0
+    for name,data of achievements
+      if data && userTotal = data['total']
+        overall += parseFloat(userTotal)
+    message = switch
+      when overall > 0 then "a happy"
+      when overall == 0 then "just"
+      when overall < 0 then "sadly"
+      else "uhh"
+    msg.send("#{message} #{overall}")
 
   robot.respond /ranking/i, (msg) ->
     userpoints = robot.brain.data.userpoints
