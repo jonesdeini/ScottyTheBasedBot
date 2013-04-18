@@ -34,7 +34,7 @@ module.exports = (robot) ->
     msg.send "#{thanker} gave #{points} to #{receiver} for #{reason}. Now has #{receiverData['total']} points."
 
   robot.respond /status/i, (msg) ->
-    achievements = robot.brain.data.achievements
+    achievements = robot.brain.data.userpoints
     overall = 0
     for name,data of achievements
       if data && userTotal = data['total']
