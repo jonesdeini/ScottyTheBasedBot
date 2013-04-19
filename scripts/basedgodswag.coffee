@@ -78,3 +78,6 @@ module.exports = (robot) ->
 
   robot.hear /how much are (lil b's|basedgod's) Vans worth?/i, (msg) ->
     msg.send "45K Bruh"
+
+  robot.hear /want to/i, (msg) ->
+    msg.send "Don't worry, one day you'll meet Lil B"
