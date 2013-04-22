@@ -72,6 +72,13 @@ swag = [
   "http://24.media.tumblr.com/tumblr_m282eowwwb1r4ai46o1_500.jpg"
 ]
 
+aspirations = [
+  "Don't worry, one day you'll meet Lil B",
+  "Lil B loves you!",
+  "TYBG"
+]
+
+
 module.exports = (robot) ->
   robot.hear /swag/i, (msg) ->
     msg.send msg.random swag
@@ -80,4 +87,4 @@ module.exports = (robot) ->
     msg.send "45K Bruh"
 
   robot.hear /want to/i, (msg) ->
-    msg.send "Don't worry, one day you'll meet Lil B"
+    msg.send msg.random aspirations
