@@ -1,1 +1,13 @@
-["redis-brain.coffee", "tweet.coffee", "futurama.coffee", "jokels.coffee", "catfacts.coffee", "likeaboss.coffee", "thanks-obama.coffee", "keep-alive.coffee"]
+[
+  "redis-brain.coffee",
+  "tweet.coffee",
+  "jokels.coffee",
+  "catfacts.coffee",
+  "likeaboss.coffee",
+  "thanks-obama.coffee",
+  "keep-alive.coffee",
+  "goooood.coffee",
+  "google.coffee",
+  "haters.coffee",
+  "hello.coffee"
+]
