@@ -17,7 +17,7 @@
   "dependencies": {
     "hubot":         "2.4.8",
     "hubot-irc":     "0.1.12",
-    "hubot-scripts": "2.4.2",
+    "hubot-scripts": "2.4.3",
     "optparse":      "1.0.3",
     "cheerio": "0.10.7",
     "request": "2.14.0",
