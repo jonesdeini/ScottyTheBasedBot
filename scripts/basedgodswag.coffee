@@ -70,7 +70,10 @@ swag = [
   "http://25.media.tumblr.com/tumblr_m4rizu6B3e1r03eaxo1_500.gif",
   "http://25.media.tumblr.com/tumblr_m56wcimIwo1r03eaxo1_500.gif",
   "http://24.media.tumblr.com/tumblr_m4yc6qWVfa1qg3uqyo1_500.jpg",
-  "http://24.media.tumblr.com/tumblr_m282eowwwb1r4ai46o1_500.jpg"
+  "http://24.media.tumblr.com/tumblr_m282eowwwb1r4ai46o1_500.jpg",
+  "'Lil B showed me how to dream' - Martin Luther King Jr.",
+  "'Lil B is my father' - Luke Skywalker",
+  "Swag swag swag swag swag, brrrang dang dang your girlfriend"
 ]
 
 module.exports = (robot) ->
