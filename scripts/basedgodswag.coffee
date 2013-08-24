@@ -83,7 +83,16 @@ swag = [
   "http://24.media.tumblr.com/tumblr_m282eowwwb1r4ai46o1_500.jpg",
   "'Lil B showed me how to dream' - Martin Luther King Jr.",
   "'Lil B is my father' - Luke Skywalker",
-  "Swag swag swag swag swag, brrrang dang dang your girlfriend"
+  "Swag swag swag swag swag, brrrang dang dang your girlfriend",
+  "http://31.media.tumblr.com/tumblr_lqtbo7q9HY1qa6kqao1_500.png",
+  "http://24.media.tumblr.com/tumblr_lqtbn2x01T1qa6kqao1_1280.png",
+  "http://24.media.tumblr.com/tumblr_lqtbllc0ZR1qa6kqao1_1280.png",
+  "http://31.media.tumblr.com/tumblr_lqtbb3QSRk1qa6kqao1_500.gif",
+  "http://24.media.tumblr.com/tumblr_lqtb7fjJDy1qa6kqao1_400.gif",
+  "http://24.media.tumblr.com/tumblr_lqtb9cNL4y1qa6kqao1_400.gif",
+  "http://24.media.tumblr.com/tumblr_lqtauuIzMj1qa6kqao1_500.gif",
+  "http://31.media.tumblr.com/tumblr_lqtat6XYtl1qa6kqao1_500.gif",
+  "http://31.media.tumblr.com/tumblr_liuc7jRf3n1qa6kqao1_400.jpg"
 ]
 
 module.exports = (robot) ->
