@@ -92,7 +92,11 @@ swag = [
   "http://24.media.tumblr.com/tumblr_lqtb9cNL4y1qa6kqao1_400.gif",
   "http://24.media.tumblr.com/tumblr_lqtauuIzMj1qa6kqao1_500.gif",
   "http://31.media.tumblr.com/tumblr_lqtat6XYtl1qa6kqao1_500.gif",
-  "http://31.media.tumblr.com/tumblr_liuc7jRf3n1qa6kqao1_400.jpg"
+  "http://31.media.tumblr.com/tumblr_liuc7jRf3n1qa6kqao1_400.jpg",
+  "http://24.media.tumblr.com/tumblr_lg2oyhOVu01qa6kqao1_1280.jpg",
+  "http://31.media.tumblr.com/tumblr_leqbd3hRu31qa6kqao1_500.gif",
+  "http://24.media.tumblr.com/tumblr_lf78piggFt1qa6kqao1_1280.jpg",
+  "http://24.media.tumblr.com/tumblr_lcdd83iyKG1qa6kqao1_500.jpg"
 ]
 
 module.exports = (robot) ->
