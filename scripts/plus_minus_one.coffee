@@ -10,11 +10,12 @@
 #
 # Author:
 #   jonesdeini
+#   jshsu
 
 module.exports = (robot) ->
   robot.brain.data.achievements ||= {}
 
-  robot.hear /(.*): *(\+1|-1) (.*)$/i, (msg) ->
+  robot.hear /(.*) *(\+1|-1) (.*)$/i, (msg) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
     points   = msg.match[2]
