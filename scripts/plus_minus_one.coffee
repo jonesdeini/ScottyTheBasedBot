@@ -18,8 +18,9 @@ module.exports = (robot) ->
   robot.hear /(.*) *(\+1|-1) (.*)$/i, (msg) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
-    points   = msg.match[2]
-    reason   = msg.match[3]
+    posNeg   = msg.match[2]
+    points   = if posNeg === "-" then msg.match[3] * -1 else msg.match[3]
+    reason   = msg.match[4]
 
     points = parseFloat(points)
 
@@ -44,4 +45,4 @@ module.exports = (robot) ->
     for name,i in topFive
       position = i + 1
       person = achievements[name]
-      msg.send "  #{position}. #{person['name']} (#{person['total']} pts)"
+      msg.send "  #{position}. #{person['name']} (#{person['total']} pts). First one to 100 points gets a free romp with lnguyen 's mom."
