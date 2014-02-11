@@ -20,7 +20,7 @@ module.exports = (robot) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
     posNeg   = msg.match[2]
-    points   = if posNeg === "-" then msg.match[3] * -1 else msg.match[3]
+    points   = if posNeg == "-" then msg.match[3] * -1 else msg.match[3]
     reason   = msg.match[4]
 
     points = parseFloat(points)
