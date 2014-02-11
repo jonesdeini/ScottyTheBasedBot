@@ -46,4 +46,4 @@ module.exports = (robot) ->
     for name,i in topFive
       position = i + 1
       person = achievements[name]
-      msg.send "  #{position}. #{person['name']} (#{person['total']} pts). First one to 100 points gets a free romp with lnguyen 's mom."
+      msg.send "  #{position}. #{person['name']} (#{person['total']} pts)"
