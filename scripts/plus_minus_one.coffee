@@ -8,8 +8,9 @@
 #   <receiver>: (+1|-1) <reason> - give +1|-1 to <receiver> (full name) because he did <reason>
 #   (show ranking|ranking) - show top players
 #
-# Author:
+# Authors:
 #   jonesdeini
+#   WHOEVER WROTE SCORING IS A NOOB
 #   jshsu
 
 module.exports = (robot) ->
