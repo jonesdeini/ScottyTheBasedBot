@@ -10,7 +10,6 @@
 #
 # Authors:
 #   jonesdeini
-#   WHOEVER WROTE SCORING IS A NOOB
 #   jshsu
 
 module.exports = (robot) ->
