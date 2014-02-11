@@ -16,7 +16,7 @@
 module.exports = (robot) ->
   robot.brain.data.achievements ||= {}
 
-  robot.hear /(^.*?( |,|:))([-+])([0-9.]+)(.*)/i, (msg) ->
+  robot.hear /(^.*?, )([-+])([0-9.]+)(.*)/i, (msg) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
     posNeg   = msg.match[2]
