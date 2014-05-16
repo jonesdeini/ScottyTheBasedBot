@@ -15,5 +15,5 @@ module.exports = (robot) ->
     msg.http("http://thugbot.net/lebowski/")
       .get() (err, response, body) ->
         if (response.statusCode == 200)
-          dudeism = body.match(/<p class="small" align="justify">(.+)<\/p>/m)
-          msg.send dudeism[1]
+          dudeism = body.match(/<p class="small" align="justify">([\s\S\w]+) <\/p>/i)
+          msg.send dudeism[1] unless dudeism == null
