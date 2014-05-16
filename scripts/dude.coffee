@@ -16,4 +16,7 @@ module.exports = (robot) ->
       .get() (err, response, body) ->
         if (response.statusCode == 200)
           dudeism = body.match(/<p class="small" align="justify">([\s\S\w]+) <\/p>/i)
-          msg.send dudeism[1] unless dudeism == null
+          unless dudeism == null
+            dudeism = dudeism[1].replace /<\/?b>/g, ""
+            dudeism = dudeism.replace /<br>/g, "\n"
+            msg.send dudeism
