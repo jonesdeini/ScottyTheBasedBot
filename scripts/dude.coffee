@@ -15,7 +15,7 @@ module.exports = (robot) ->
     msg.http("http://thugbot.net/lebowski/")
       .get() (err, response, body) ->
         if (response.statusCode == 200)
-          dudeism = body.match(/<p class="small" align="justify">([\s\S\w]+) <\/p>/i)
+          dudeism = body.match(/<p class="small" align="justify">([\s\S\w]+)(\n| )<\/p>/i)
           unless dudeism == null
             dudeism = dudeism[1].replace /<\/?b>/g, ""
             dudeism = dudeism.replace /<br>/g, "\n"
