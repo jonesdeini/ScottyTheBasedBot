@@ -1,5 +1,9 @@
 # Description:
-#   no Description needed
+# THIS IS WHAT HAPPENS WHEN YOU PARSE HTML WITH A REGEX!
+#
+# HERE'S WHAT HAPPENS, LARRY!
+#
+# HERE'S WHAT HAPPENS! WHEN YOU PARSE HTML WITH A REGEX!
 #
 # Dependencies:
 #   None
