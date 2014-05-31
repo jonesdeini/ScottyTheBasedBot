@@ -5,21 +5,23 @@
 #   None
 #
 # Commands:
-#   <receiver>: (+1|-1) <reason> - give +1|-1 to <receiver> (full name) because he did <reason>
+#   <receiver>, (number) <reason> - give (number) to <receiver> (full name) because he did <reason>
 #   (show ranking|ranking) - show top players
 #
-# Author:
+# Authors:
 #   jonesdeini
 #   jshsu
+#   long's mom
 
 module.exports = (robot) ->
   robot.brain.data.achievements ||= {}
 
-  robot.hear /(.*) *(\+1|-1) (.*)$/i, (msg) ->
+  robot.hear /(^.*?, )([-+])([0-9.]+)(.*)/i, (msg) ->
     thanker  = msg.message.user.name
     receiver = msg.match[1].trim()
-    points   = msg.match[2]
-    reason   = msg.match[3]
+    posNeg   = msg.match[2]
+    points   = if posNeg == "-" then msg.match[3] * -1 else msg.match[3]
+    reason   = msg.match[4]
 
     points = parseFloat(points)
 
